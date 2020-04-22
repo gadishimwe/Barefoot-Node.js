@@ -18,7 +18,7 @@
     "lint:fix": "eslint . --fix",
     "build": "babel src  --out-dir production",
     "start": "node production/server.js",
-    "migrate:drop": "sequelize db:migrate:undo:all",
+    "migrate:drop": "npx sequelize-cli db:migrate:undo:all",
     "dev": "nodemon --exec babel-node src/server.js",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
     "pretest": "npm run migrate:drop && npm run migrate:up && npm run seed:up",
